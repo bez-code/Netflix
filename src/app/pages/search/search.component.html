@@ -1,8 +1,13 @@
 <div class="contain mt-5 p-5">
   <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
-    <div class="row ">
+    <div class="row">
       <div class="mb-3 col-lg-10">
-        <input type="text" class="form-control" formControlName="movieName" placeholder="Search Movie Here ...">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="movieName"
+          placeholder="Search Movie Here ..."
+        />
       </div>
       <div class="col-lg-2">
         <button class="btn btn-md">Search</button>
@@ -14,15 +19,15 @@
     <div class="col-lg-4" *ngFor="let s of serachResult">
       <div class="row">
         <div class="col-lg-3 mt-3 mb-3" *ngIf="s.poster_path">
-          <img src="https://image.tmdb.org/t/p/original/{{ s.poster_path}}">
-
+          <img
+            src="https://image.tmdb.org/t/p/original/{{ s.poster_path }}"
+            [routerLink]="['/movie', s.id]"
+          />
         </div>
         <div class="col-lg-9 mt-4 mb-4">
-            <h5>{{s.title}}</h5>
-            <p>{{s.overview}}</p>
+          <h5 [routerLink]="['/movie', s.id]">{{ s.title }}</h5>
         </div>
       </div>
     </div>
   </div>
-
 </div>

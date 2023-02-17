@@ -9,10 +9,10 @@ export class AppComponent {
   title = 'Netflix';
   navbg: any;
 
-  @HostListener ('document:scroll')  scrollover() {
+  @HostListener('document:scroll') scrollover() {
     console.log(document.body.scrollTop, 'scrollength#');
 
-    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0){
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
       this.navbg = {
         'background-color': '#000000'
       }
